@@ -16,22 +16,26 @@ The following example workflow step will create an issue in a GitHub repository 
       use_browser: false
       filters:
         - html2text
+        - between:
+            start: "#### __WebAppInitData"
+            end: "#### __Events Available for Mini Apps"
     config: |
       report:
         tz: UTC
         github_issue:
           enabled: true
-          owner: '${{ github.repository_owner }}'
-          repo: '${{ github.event.repository.name }}'
-          token: '${{ secrets.GITHUB_TOKEN }}'
-          format_dt: '%Y-%m-%d'
-          title: 'Telegram Mini App documentation update {dt}'
+          owner: "${{ github.repository_owner }}"
+          repo: "${{ github.event.repository.name }}"
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          format_dt: "%Y-%m-%d"
+          title: "Telegram Mini App documentation update: {dt}"
           assignees: 
-            - 'swimmwatch'
+            - "swimmwatch"
           format_content: |
-            ```text
+            ```diff
             {content}
             ```
+
 ```
 
 ## Options
