@@ -8,7 +8,7 @@ The following example workflow step will create an issue in a GitHub repository 
 ```yml
 - name: "Detect web page changes"
   id: webchanges
-  uses: swimmwatch/webchanges-action@v1.0.0
+  uses: swimmwatch/webchanges-action@v1.0.1
   with:
     jobs: |
       name: Telegram Mini App documentation
